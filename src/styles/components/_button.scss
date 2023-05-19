@@ -1,0 +1,25 @@
+.btn {
+	height: 40px;
+	padding: 5px 20px;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	font-family: $font;
+	font-weight: 600;
+	font-size: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	cursor: pointer;
+}
+
+.btn-primary {
+	background-color: $primary;
+	color: $text-white;
+}
+
+.btn-secondary {
+	background-color: $bg-primary;
+	color: $text-dark;
+}
