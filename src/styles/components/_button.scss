@@ -12,6 +12,7 @@
 	justify-content: center;
 	gap: 7px;
 	cursor: pointer;
+	transition: all 0.3s;
 }
 
 .btn-primary {
@@ -21,5 +22,15 @@
 
 .btn-secondary {
 	background-color: $bg-primary;
-	color: $text-dark;
+	color: $primary;
+}
+
+@media (hover: hover) {
+	.btn-primary:hover {
+		box-shadow: 0 0 13px -2px $primary;
+	}
+
+	.btn-secondary:hover {
+		box-shadow: 0 0 13px -2px $bg-primary;
+	}
 }

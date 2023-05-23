@@ -14,13 +14,16 @@ function Nav({ navLinks }) {
             onClick={() => setToggle(!toggle)}>
             <span className="first"></span><span className="second"></span><span className="third"></span>
          </div>
-         <h1 className="brand"><Link href="/">Kevin Gonzalez</Link></h1>
+         <h1 className="brand link-hover-primary"><Link href="/">Kevin Gonzalez</Link></h1>
          <ul className="nav">
             {
                navLinks.map(l => {
                   return (
                      <li key={l.name} className="nav-link">
-                        <Link href={l.path}>{l.name}</Link>
+                        <Link
+                           className="link-hover-primary"
+                           href={l.path}>
+                           {l.name}</Link>
                      </li>)
                })
             }
