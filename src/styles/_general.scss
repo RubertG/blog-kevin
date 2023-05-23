@@ -6,6 +6,20 @@
 	line-height: 1.3em;
 }
 
+body::-webkit-scrollbar {
+	width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+	background: $bg-primary;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: $primary;
+	border-radius: 20px;
+	border: 3px solid $bg-primary;
+}
+
 @media (min-width: 768px) {
 	html {
 		font-size: 1.1rem;

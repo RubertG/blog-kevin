@@ -5,11 +5,11 @@ export const metadata = {
    description: 'Portafolio y blog personal del ingeniero electromecanico y especialista en seguridad y salud en el trabajo, Kevin Gonzalez.',
 }
 
+
 export default function RootLayout({ children }) {
    return (
       <html lang="es">
-         <body
-            className={globals}>
+         <body className={globals}>
             {children}
          </body>
       </html>
