@@ -27,10 +27,10 @@
 
 @media (hover: hover) {
 	.btn-primary:hover {
-		box-shadow: 0 0 13px -2px $primary;
+		box-shadow: 0 0 13px -3px $primary;
 	}
 
 	.btn-secondary:hover {
-		box-shadow: 0 0 13px -2px $bg-primary;
+		box-shadow: 0 0 11px -3px $bg-primary;
 	}
 }

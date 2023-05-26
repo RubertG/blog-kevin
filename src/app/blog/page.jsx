@@ -9,10 +9,12 @@ const NavLink = [
 
 function page() {
    return (
-      <div className="container">
+      <>
          <Nav navLinks={NavLink} />
-         Page blog
-      </div>
+         <div className="container">
+            Page blog
+         </div>
+      </>
    )
 }
 

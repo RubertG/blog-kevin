@@ -40,8 +40,15 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container-secondary {
-	@extend .container;
+	width: 100%;
+	min-height: 100vh;
 	max-width: none;
+	padding: 40px 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 30px;
 	background-color: $primary;
 	background-image: url($url-bg-animate);
 	background-attachment: fixed;
@@ -90,6 +97,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 1024px) {
+	.container {
+		flex-direction: row-reverse;
+		margin: auto;
+		padding: 0 20px;
+		gap: 50px;
+	}
+
 	.title {
 		font-size: 3.1rem;
 		text-align: left;

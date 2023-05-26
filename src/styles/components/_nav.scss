@@ -2,14 +2,15 @@
 	position: fixed;
 	width: 100%;
 	clip-path: circle(22.5px at 42.5px 37.5px);
-	backdrop-filter: blur(8px);
-	background: $bg-nav;
+	backdrop-filter: blur(7px);
+	background: $bg-primary;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	transition: all 0.5s ease-in-out;
 	transition-delay: 0.4s;
+	z-index: 1000;
 
 	.brand {
 		font-size: 1.3rem;
@@ -146,8 +147,10 @@
 	.navbar {
 		clip-path: none;
 		border: 2px solid $gray-ligth;
+		background: $bg-nav;
 		border-radius: 15px;
 		max-width: 1000px;
+		width: 96%;
 		padding: 10px 50px;
 		flex-direction: row;
 		justify-content: space-between;
