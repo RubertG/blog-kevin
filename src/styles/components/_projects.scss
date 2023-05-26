@@ -1,11 +1,11 @@
-.container-proyects {
+.container-projects {
 	width: 100%;
 	max-width: 1250px;
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.project-card-primary {
+.project-card {
 	width: 100%;
 	margin: auto;
 	max-width: 470px;
@@ -18,6 +18,7 @@
 	flex-direction: column;
 	gap: 20px;
 	border-radius: 10px;
+	cursor: pointer;
 
 	.project-card__img {
 		width: 100%;
@@ -59,8 +60,30 @@
 	}
 }
 
+.project-card-secondary {
+	background: $bg-card-secondary;
+	border-color: $border-card-secondary;
+
+	.project-card__body {
+		.body__title {
+			h3 {
+				color: $primary;
+			}
+
+			p {
+				color: $gray;
+			}
+		}
+
+		.body__text p {
+			font-weight: 400;
+			color: $text-dark;
+		}
+	}
+}
+
 @media (min-width: 1024px) {
-	.project-card-primary {
+	.project-card {
 		max-width: none;
 		flex-direction: row;
 		margin: 10px 20px;

@@ -1,4 +1,5 @@
 import Nav from "@/components/Nav"
+import Projects from "@/components/Projects"
 
 const NavLink = [
    {
@@ -11,8 +12,9 @@ function page() {
    return (
       <>
          <Nav navLinks={NavLink} />
-         <div className="container">
-            Page blog
+         <div className="container-colum">
+            <h2 className="title title-primary">Blog</h2>
+            <Projects isCardSecondary={true} />
          </div>
       </>
    )

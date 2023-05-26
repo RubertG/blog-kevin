@@ -3,7 +3,7 @@
 	width: 100%;
 	clip-path: circle(22.5px at 42.5px 37.5px);
 	backdrop-filter: blur(7px);
-	background: $bg-primary;
+	background: $bg-nav;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -11,6 +11,8 @@
 	transition: all 0.5s ease-in-out;
 	transition-delay: 0.4s;
 	z-index: 1000;
+	opacity: 0;
+	animation: entry 0.2s ease-in-out both;
 
 	.brand {
 		font-size: 1.3rem;
@@ -147,7 +149,6 @@
 	.navbar {
 		clip-path: none;
 		border: 2px solid $gray-ligth;
-		background: $bg-nav;
 		border-radius: 15px;
 		max-width: 1000px;
 		width: 96%;

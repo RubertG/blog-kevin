@@ -7,6 +7,10 @@ function Nav({ navLinks }) {
 
    const [toggle, setToggle] = useState(false)
 
+   const handleClick = () => {
+      window.scrollTo({ top: 0 });
+   };
+
    return (
       <nav className={`navbar ${toggle ? "active" : ""}`}>
          <div
@@ -14,7 +18,14 @@ function Nav({ navLinks }) {
             onClick={() => setToggle(!toggle)}>
             <span className="first"></span><span className="second"></span><span className="third"></span>
          </div>
-         <h1 className="brand link-hover-primary"><Link href="/">Kevin Gonzalez</Link></h1>
+         <h1 className="brand link-hover-primary">
+            <Link
+               href="/"
+               onClick={handleClick}
+            >
+               Kevin Gonzalez
+            </Link>
+         </h1>
          <ul className="nav">
             {
                navLinks.map(l => {
@@ -22,7 +33,9 @@ function Nav({ navLinks }) {
                      <li key={l.name} className="nav-link">
                         <Link
                            className="link-hover-primary"
-                           href={l.path}>
+                           href={l.path}
+                           onClick={handleClick}
+                        >
                            {l.name}</Link>
                      </li>)
                })

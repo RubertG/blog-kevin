@@ -12,10 +12,6 @@
 body {
 	margin: 0;
 	font-family: $font;
-	background-image: url($url-bg-animate);
-	background-attachment: fixed;
-	background-position: center;
-	object-fit: cover;
 }
 
 @import "general";
