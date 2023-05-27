@@ -1,13 +1,23 @@
+"use client"
 import Image from 'next/image'
-import React from 'react'
 import Button from './Button'
+import { useRouter } from 'next/navigation'
 
 function Project({ project, isCardSecondary = false, isRightCard }) {
 
    const classColorCard = isCardSecondary ? "project-card-secondary" : ""
    const className = `project-card ${classColorCard} ${isRightCard ? "project-card-right" : ""}`
+   const router = useRouter()
+
+   const handleClick = () => {
+      router.push(`/blog/${project.id}`)
+   }
+
    return (
-      <li className={className}>
+      <li
+         className={className}
+         onClick={handleClick}
+      >
          <Image
             className="project-card__img"
             src={project.img}
@@ -22,7 +32,10 @@ function Project({ project, isCardSecondary = false, isRightCard }) {
             </div>
             <div className="body__text">
                <p>{project.desc}</p>
-               <Button btnSecondary={!isCardSecondary}>
+               <Button
+                  btnSecondary={!isCardSecondary}
+                  href={`/blog/${project.id}`}
+               >
                   Ver proyecto
                </Button>
             </div>

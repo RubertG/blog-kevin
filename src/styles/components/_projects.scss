@@ -3,6 +3,7 @@
 	max-width: 1250px;
 	display: flex;
 	flex-wrap: wrap;
+	padding: 5px;
 }
 
 .project-card {
@@ -11,7 +12,6 @@
 	max-width: 470px;
 	background-color: $bg-card-blue;
 	border: 2px solid $border-card-primary;
-	backdrop-filter: blur(7px);
 	margin-top: 20px;
 	overflow: hidden;
 	display: flex;

@@ -1,8 +1,7 @@
-import Button from "@/components/Button";
+import Contact from "@/components/Contact";
 import Header from "@/components/Header";
 import Nav from "@/components/Nav";
 import Projects from "@/components/Projects";
-import Image from "next/image";
 
 const navLinks = [
    {
@@ -20,6 +19,7 @@ export default function Home() {
             <h2 className="title title-secondary">Mis proyectos</h2>
             <Projects limit={4} />
          </div>
+         <Contact />
       </div>
    )
 }
