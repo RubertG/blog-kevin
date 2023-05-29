@@ -5,9 +5,10 @@ import { useRouter } from 'next/navigation'
 
 function Project({ project, isCardSecondary = false, isRightCard }) {
 
+   const router = useRouter()
    const classColorCard = isCardSecondary ? "project-card-secondary" : ""
    const className = `project-card ${classColorCard} ${isRightCard ? "project-card-right" : ""}`
-   const router = useRouter()
+   const projectDate = project.date.toLocaleDateString('es-co')
 
    const handleClick = () => {
       router.push(`/blog/${project.id}`)
@@ -21,14 +22,14 @@ function Project({ project, isCardSecondary = false, isRightCard }) {
          <Image
             className="project-card__img"
             src={project.img}
-            width="500"
+            width="600"
             height="400"
             alt={project.name}
          />
          <div className="project-card__body">
             <div className="body__title">
                <h3>{project.name}</h3>
-               <p>{project.date}</p>
+               <p>{projectDate}</p>
             </div>
             <div className="body__text">
                <p>{project.desc}</p>

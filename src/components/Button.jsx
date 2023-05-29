@@ -1,10 +1,10 @@
 "use client"
 import { useRouter } from "next/navigation"
 
-function Button({ href, btnSecondary = false, children }) {
+function Button({ href, btnSecondary = false, children, className }) {
 
    const router = useRouter()
-   const className = `btn ${btnSecondary ? "btn-secondary" : "btn-primary"}`
+   const classNameFinal = `btn ${btnSecondary ? "btn-secondary" : "btn-primary"} ${className}`
 
    const handleClick = () => {
       if (href) {
@@ -14,7 +14,7 @@ function Button({ href, btnSecondary = false, children }) {
 
    return (
       <button
-         className={className}
+         className={classNameFinal}
          onClick={handleClick}
       >
          {children}

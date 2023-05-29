@@ -15,10 +15,10 @@ export default function Home() {
       <div>
          <Nav navLinks={navLinks} />
          <Header />
-         <div className="container-secondary">
+         <main className="container-secondary">
             <h2 className="title title-secondary">Mis proyectos</h2>
             <Projects limit={4} />
-         </div>
+         </main>
          <Contact />
       </div>
    )

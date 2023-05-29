@@ -1,3 +1,4 @@
+import { ProjectsProvider } from '@/context/ProjectsContext'
 import globals from '../styles/globals.scss'
 
 export const metadata = {
@@ -10,7 +11,9 @@ export default function RootLayout({ children }) {
    return (
       <html lang="es">
          <body className={globals}>
-            {children}
+            <ProjectsProvider>
+               {children}
+            </ProjectsProvider>
          </body>
       </html>
    )
