@@ -1,5 +1,6 @@
 import { ProjectsProvider } from '@/context/ProjectsContext'
 import globals from '../styles/globals.scss'
+import Footer from '@/components/Footer'
 
 export const metadata = {
    title: 'KevinWeb',
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
             <ProjectsProvider>
                {children}
             </ProjectsProvider>
+            <Footer />
          </body>
       </html>
    )

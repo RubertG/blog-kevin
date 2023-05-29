@@ -76,6 +76,7 @@ body::-webkit-scrollbar-thumb {
 	align-items: center;
 	justify-content: center;
 	padding: 30px 10px 120px 10px;
+	animation: entry 0.2s both;
 }
 
 @keyframes entry {
