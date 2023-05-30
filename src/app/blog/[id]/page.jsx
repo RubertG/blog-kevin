@@ -2,6 +2,7 @@
 import Button from '@/components/Button'
 import { useProjectsContext } from '@/context/ProjectsContext'
 import Image from 'next/image'
+import { useEffect } from 'react'
 
 function ProjectPage({ params }) {
 

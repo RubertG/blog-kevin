@@ -4,7 +4,7 @@ import React from 'react'
 function Contact() {
    return (
       <section className='container-contact'>
-         <h2 className='title'>Contáctame</h2>
+         <h2 className='title' id='contacto'>Contáctame</h2>
          <div className="container-contact-icons">
             <a href="#" target="_blank">
                <Image src="/assets/linkedin.svg" alt="Icon Linkedin." width="90" height="90" />

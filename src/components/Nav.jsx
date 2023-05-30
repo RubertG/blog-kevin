@@ -10,6 +10,7 @@ function Nav({ navLinks }) {
    const pathname = usePathname();
 
    const handleClick = () => {
+      setToggle(false)
       window.scrollTo({ top: 0 });
    };
 
@@ -17,7 +18,8 @@ function Nav({ navLinks }) {
       <nav className={`navbar ${toggle ? "active" : ""}`}>
          <div
             className={"container-toggle"}
-            onClick={() => setToggle(!toggle)}>
+            onClick={() => setToggle(!toggle)}
+         >
             <span className="first"></span><span className="second"></span><span className="third"></span>
          </div>
          <h1 className="brand link-hover-primary">

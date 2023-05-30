@@ -42,19 +42,11 @@ body::-webkit-scrollbar-thumb {
 
 .container {
 	@extend .c;
-	background-image: url($url-bg-animate);
-	background-attachment: fixed;
-	background-position: center;
-	object-fit: cover;
 	background-color: $bg-primary;
 }
 
 .container-colum {
 	@extend .c;
-	background-image: url($url-bg-animate);
-	background-attachment: fixed;
-	background-position: center;
-	object-fit: cover;
 	padding: 30px 0;
 	background-color: $bg-primary;
 }
@@ -116,6 +108,20 @@ body::-webkit-scrollbar-thumb {
 
 	.container-colum {
 		padding: 80px 0px;
+	}
+
+	.container {
+		background-image: url($url-bg-animate);
+		background-attachment: fixed;
+		background-position: center;
+		object-fit: cover;
+	}
+
+	.container-colum {
+		background-image: url($url-bg-animate);
+		background-attachment: fixed;
+		background-position: center;
+		object-fit: cover;
 	}
 }
 
