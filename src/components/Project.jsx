@@ -8,7 +8,6 @@ function Project({ project, isCardSecondary = false, isRightCard }) {
    const router = useRouter()
    const classColorCard = isCardSecondary ? "project-card-secondary" : ""
    const className = `project-card ${classColorCard} ${isRightCard ? "project-card-right" : ""}`
-   const projectDate = project.date.toLocaleDateString('es-co')
 
    const handleClick = () => {
       router.push(`/blog/${project.id}`)
@@ -29,7 +28,6 @@ function Project({ project, isCardSecondary = false, isRightCard }) {
          <div className="project-card__body">
             <div className="body__title">
                <h3>{project.name}</h3>
-               <p>{projectDate}</p>
             </div>
             <div className="body__text">
                <p>{project.desc}</p>

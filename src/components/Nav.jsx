@@ -2,10 +2,12 @@
 import Link from "next/link"
 import SocialIcons from "./SocialIcons"
 import { useState } from "react"
+import { usePathname } from "next/navigation"
 
 function Nav({ navLinks }) {
 
    const [toggle, setToggle] = useState(false)
+   const pathname = usePathname();
 
    const handleClick = () => {
       window.scrollTo({ top: 0 });
@@ -28,15 +30,20 @@ function Nav({ navLinks }) {
          </h1>
          <ul className="nav">
             {
-               navLinks.map(l => {
+               navLinks.map(link => {
+                  let isActive;
+                  if (link.path === "/" && pathname !== link.path) isActive = false
+                  else isActive = pathname.startsWith(link.path)
+                  const className = `link-hover-primary ${isActive ? "link-active" : ""}`
+
                   return (
-                     <li key={l.name} className="nav-link">
+                     <li key={link.name} className="nav-link">
                         <Link
-                           className="link-hover-primary"
-                           href={l.path}
+                           className={className}
+                           href={link.path}
                            onClick={handleClick}
                         >
-                           {l.name}</Link>
+                           {link.name}</Link>
                      </li>)
                })
             }
