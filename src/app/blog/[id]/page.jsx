@@ -34,9 +34,10 @@ function ProjectPage({ params }) {
          const auxProject = projects.find((p) => p.id === id);
          if (!auxProject) {
             setNotFound(true)
-            setLoading(false)
+         } else {
+            setProject(auxProject)
          }
-         setProject(auxProject)
+         setLoading(false)
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [projects])
