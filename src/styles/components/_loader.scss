@@ -1,0 +1,44 @@
+.container-loader {
+	height: 400px;
+	width: 100%;
+	display: grid;
+	place-content: center;
+}
+
+.loader {
+	box-sizing: border-box;
+	position: relative;
+	width: 40px;
+	height: 40px;
+	animation: spin 1s linear infinite;
+
+	&:after,
+	&:before {
+		content: "";
+		width: 24px;
+		height: 24px;
+		position: absolute;
+		border-radius: 50%;
+		background: $text-dark;
+		animation: spin 1s linear infinite;
+		transform-origin: 0px 100%;
+	}
+
+	&:before {
+		transform-origin: 0 50%;
+		background: $text-white;
+	}
+}
+
+.loader-secondary {
+	&:before {
+		transform-origin: 0 50%;
+		background: $primary;
+	}
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}

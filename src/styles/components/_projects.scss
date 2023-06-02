@@ -19,12 +19,15 @@
 	gap: 20px;
 	border-radius: 10px;
 	cursor: pointer;
+	opacity: 0;
+	animation: entry 0.25s both;
 
 	.project-card__img {
 		width: 100%;
 		max-height: 300px;
 		object-fit: cover;
 		object-position: center;
+		background-color: #ccc;
 	}
 
 	.project-card__body {
@@ -100,13 +103,15 @@
 				text-align: start;
 
 				h3 {
-					font-size: 1.8rem;
+					font-size: 1.55rem;
+					margin: 0;
 				}
 			}
 
 			.body__text {
 				p {
 					font-size: 0.95rem;
+					margin-top: 10px;
 				}
 			}
 		}

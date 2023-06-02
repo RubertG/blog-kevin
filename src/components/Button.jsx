@@ -1,7 +1,7 @@
 "use client"
 import { useRouter } from "next/navigation"
 
-function Button({ href, btnSecondary = false, children, className }) {
+function Button({ href, btnSecondary = false, children, className = "" }) {
 
    const router = useRouter()
    const classNameFinal = `btn ${btnSecondary ? "btn-secondary" : "btn-primary"} ${className}`

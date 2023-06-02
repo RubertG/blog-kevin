@@ -3,6 +3,7 @@ import globals from '@/styles/globals.scss'
 import Footer from '@/components/Footer'
 import Nav from '@/components/Nav'
 import Contact from '@/components/Contact'
+import "../firebase/config"
 
 export const metadata = {
    title: 'KevinWeb - Página web de Kevin Gonzalez.',

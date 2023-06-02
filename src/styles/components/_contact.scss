@@ -1,8 +1,4 @@
 .container-contact {
-	background-image: url($url-bg-animate);
-	background-attachment: fixed;
-	background-position: center;
-	object-fit: cover;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -57,6 +53,13 @@
 }
 
 @media (min-width: 768px) {
+	.container-contact {
+		background-image: url($url-bg-animate);
+		background-attachment: fixed;
+		background-position: center;
+		object-fit: cover;
+	}
+
 	.container-contact-icons {
 		column-gap: 80px;
 		row-gap: 70px;

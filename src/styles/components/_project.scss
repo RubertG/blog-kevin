@@ -10,6 +10,7 @@
 		right: 15px;
 		display: flex;
 		justify-content: flex-end;
+		z-index: 100;
 	}
 
 	.project-page__title {
@@ -33,21 +34,25 @@
 		height: 2px;
 		border: none;
 		border-radius: 10px;
+		margin-bottom: 30px;
 	}
 
 	img {
 		width: 100%;
-		max-width: 650px;
+		max-width: 550px;
 		height: auto;
 		display: block;
-		margin: 0px auto 10px auto;
+		margin: 20px auto;
 		overflow: hidden;
 		aspect-ratio: 4/3;
-		object-fit: contain;
+		object-fit: cover;
+		background-color: #ccc;
 	}
 
 	.project-page__content {
 		color: $text-dark;
+		z-index: 1;
+
 		p {
 			font-size: 1rem;
 			text-align: justify;
@@ -62,6 +67,15 @@
 		h3 {
 			font-size: 1.2rem;
 			margin-bottom: 5px;
+		}
+
+		ul {
+			margin-left: 30px;
+			list-style-type: disc;
+
+			img {
+				transform: translateX(-15px);
+			}
 		}
 	}
 }
@@ -87,8 +101,39 @@
 			margin-bottom: 50px;
 		}
 
+		.project-page__content {
+			ul {
+				margin-left: 50px;
+				list-style-type: disc;
+
+				img {
+					transform: translateX(-25px);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.container-project {
 		hr {
 			margin-bottom: 20px;
+		}
+
+		.project-page__content {
+			p {
+				font-size: 1.1rem;
+			}
+
+			ul {
+				margin-left: 50px;
+				list-style-type: disc;
+				font-size: 1.1rem;
+
+				img {
+					transform: translateX(-25px);
+				}
+			}
 		}
 	}
 }

@@ -2,7 +2,6 @@
 import Button from '@/components/Button'
 import { useProjectsContext } from '@/context/ProjectsContext'
 import Image from 'next/image'
-import { useEffect } from 'react'
 
 function ProjectPage({ params }) {
 
@@ -28,18 +27,13 @@ function ProjectPage({ params }) {
                {project.desc}
             </p>
             <hr />
-            <Image
-               width={400}
-               height={600}
-               alt={`${project.name} - KevinWeb.`}
-               src={project.img}
-            />
             <div
                className='project-page__content'
                dangerouslySetInnerHTML={{
                   __html: project.content
                }}
-            />
+            >
+            </div>
          </div>
       </main>
    )
