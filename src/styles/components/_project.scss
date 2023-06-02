@@ -11,6 +11,8 @@
 		display: flex;
 		justify-content: flex-end;
 		z-index: 100;
+		opacity: 0;
+		animation: entry 0.25s both;
 	}
 
 	.project-page__title {
@@ -20,6 +22,8 @@
 		margin-bottom: 5px;
 		font-weight: 700;
 		margin-bottom: 10px;
+		opacity: 0;
+		animation: entry 0.25s both;
 	}
 
 	.project-page__desc {
@@ -27,6 +31,8 @@
 		text-align: justify;
 		color: $text-dark;
 		margin-bottom: 20px;
+		opacity: 0;
+		animation: entry 0.25s both;
 	}
 
 	hr {
@@ -35,6 +41,8 @@
 		border: none;
 		border-radius: 10px;
 		margin-bottom: 30px;
+		opacity: 0;
+		animation: entry 0.25s both;
 	}
 
 	img {
@@ -47,11 +55,14 @@
 		aspect-ratio: 4/3;
 		object-fit: cover;
 		background-color: #ccc;
+		opacity: 0;
+		animation: entry 0.25s both;
 	}
 
 	.project-page__content {
 		color: $text-dark;
-		z-index: 1;
+		opacity: 0;
+		animation: entry 0.25s both;
 
 		p {
 			font-size: 1rem;

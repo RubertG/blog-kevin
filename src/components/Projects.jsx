@@ -3,8 +3,9 @@ import { useProjectsContext } from '@/context/ProjectsContext'
 import Project from './Project'
 import { useEffect } from 'react'
 import { getProjects } from '@/firebase/getProjects'
+import Loader from './Loader'
 
-function Projects({ limit, isCardSecondary = false }) {
+function Projects({ limit = null, isCardSecondary = false }) {
 
    const { projects, setProjects } = useProjectsContext()
    let rightCard = true
@@ -13,10 +14,12 @@ function Projects({ limit, isCardSecondary = false }) {
       if (projects) return
       getProjects((querySnapshot) => {
          const auxProjects = [];
-         querySnapshot.forEach((doc, index) => {
-            if (limit < index) return
+         let i = 0;
+         querySnapshot.forEach((doc) => {
+            if (limit && limit <= i + 1) return;
             const id = doc.id;
             auxProjects.push({ ...doc.data(), id });
+            i++
          });
          setProjects(auxProjects)
       })
@@ -40,9 +43,7 @@ function Projects({ limit, isCardSecondary = false }) {
                })
             ) : (
                <div className='container-loader'>
-                  <span
-                     className={`loader ${isCardSecondary ? "loader-secondary" : ""}`}
-                  ></span>
+                  <Loader isColorSecondary={isCardSecondary} />
                </div>
             )
          }

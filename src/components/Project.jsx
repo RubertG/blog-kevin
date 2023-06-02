@@ -24,6 +24,7 @@ function Project({ project, isCardSecondary = false, isRightCard }) {
             width="600"
             height="400"
             alt={project.name}
+            priority
          />
          <div className="project-card__body">
             <div className="body__title">

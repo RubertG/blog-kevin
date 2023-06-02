@@ -3,6 +3,8 @@
 	width: 100%;
 	display: grid;
 	place-content: center;
+	opacity: 0;
+	animation: entry 0.4s both;
 }
 
 .loader {
