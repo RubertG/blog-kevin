@@ -54,6 +54,12 @@
 				font-size: 1.05rem;
 				font-weight: 300;
 			}
+
+			.project-card__buttons {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
 		}
 	}
 }
@@ -113,6 +119,11 @@
 				p {
 					font-size: 0.95rem;
 					margin-top: 10px;
+				}
+
+				.project-card__buttons {
+					justify-content: flex-start;
+					gap: 15px;
 				}
 			}
 		}

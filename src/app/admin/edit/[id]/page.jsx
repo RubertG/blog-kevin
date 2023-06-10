@@ -1,15 +1,22 @@
 "use client"
-import Button from '@/components/Button'
-import Loader from '@/components/Loader'
-import { useLoadProject } from '@/hooks/useLoadProject'
+import Button from "@/components/Button"
+import Loader from "@/components/Loader"
+import { useLoadProject } from "@/hooks/useLoadProject"
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-function ProjectPage({ params }) {
+function EditArticlePage({ params }) {
 
    const { id } = params
    const { loading, notFound, project } = useLoadProject({ id })
 
+   const handleEditorChange = (event, editor) => {
+      const data = editor.getData();
+      console.log(data); // Aquí puedes hacer algo con el contenido del editor
+   };
+
    return (
-      <main className='container-colum'>
+      <main className='container-colum-admin'>
          {
             project && (
                <section className="container-project">
@@ -24,17 +31,10 @@ function ProjectPage({ params }) {
                   <h2 className='project-page__title'>
                      {project.name}
                   </h2>
-                  <p className="project-page__desc">
-                     {project.desc}
-                  </p>
-                  <hr />
-                  <div
-                     className='project-page__content'
-                     dangerouslySetInnerHTML={{
-                        __html: project.content
-                     }}
-                  >
-                  </div>
+                  <CKEditor
+                     editor={ClassicEditor}
+                     onChange={handleEditorChange}
+                  />
                </section>
             )
          }
@@ -58,4 +58,4 @@ function ProjectPage({ params }) {
    )
 }
 
-export default ProjectPage
+export default EditArticlePage

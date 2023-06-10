@@ -4,8 +4,9 @@ import Project from './Project'
 import { useEffect } from 'react'
 import { getProjects } from '@/firebase/getProjects'
 import Loader from './Loader'
+import ProjectAdmin from './ProjectAdmin'
 
-function Projects({ limit = null, isCardSecondary = false }) {
+function Projects({ limit = null, isCardSecondary = false, isAdmin = false }) {
 
    const { projects, setProjects } = useProjectsContext()
    let rightCard = true
@@ -32,6 +33,14 @@ function Projects({ limit = null, isCardSecondary = false }) {
             projects ? (
                projects.map((project) => {
                   rightCard = !rightCard
+                  if (isAdmin) return (
+                     <ProjectAdmin
+                        key={project.id}
+                        project={project}
+                        isRightCard={rightCard}
+                        isCardSecondary={isCardSecondary}
+                     />
+                  )
                   return (
                      <Project
                         key={project.id}

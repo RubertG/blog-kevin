@@ -3,15 +3,13 @@ import Image from 'next/image'
 import Button from './Button'
 import { useRouter } from 'next/navigation'
 
-function Project({ project, isCardSecondary = false, isRightCard }) {
+function Project({ project, isCardSecondary = false, isRightCard = false }) {
 
    const router = useRouter()
    const classColorCard = isCardSecondary ? "project-card-secondary" : ""
    const className = `project-card ${classColorCard} ${isRightCard ? "project-card-right" : ""}`
 
-   const handleClick = () => {
-      router.push(`/blog/${project.id}`)
-   }
+   const handleClick = () => router.push(`/blog/${project.id}`)
 
    return (
       <li

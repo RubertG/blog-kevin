@@ -51,6 +51,11 @@ body::-webkit-scrollbar-thumb {
 	background-color: $bg-primary;
 }
 
+.container-colum-admin {
+	@extend .c;
+	background-color: $bg-primary;
+}
+
 .container-secondary {
 	@extend .c;
 	padding: 40px 0px;
@@ -110,14 +115,9 @@ body::-webkit-scrollbar-thumb {
 		padding: 80px 0px;
 	}
 
-	.container {
-		background-image: url($url-bg-animate);
-		background-attachment: fixed;
-		background-position: center;
-		object-fit: cover;
-	}
-
-	.container-colum {
+	.container,
+	.container-colum,
+	.container-colum-admin {
 		background-image: url($url-bg-animate);
 		background-attachment: fixed;
 		background-position: center;

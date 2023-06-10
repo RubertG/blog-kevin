@@ -7,9 +7,7 @@ function Button({ href, btnSecondary = false, children, className = "" }) {
    const classNameFinal = `btn ${btnSecondary ? "btn-secondary" : "btn-primary"} ${className}`
 
    const handleClick = () => {
-      if (href) {
-         return router.push(href)
-      }
+      if (href) return router.push(href)
    }
 
    return (
