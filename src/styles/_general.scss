@@ -53,6 +53,8 @@ body::-webkit-scrollbar-thumb {
 
 .container-colum-admin {
 	@extend .c;
+	justify-content: flex-start;
+	padding-top: 30px;
 	background-color: $bg-primary;
 }
 

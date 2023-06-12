@@ -1,0 +1,21 @@
+.container-editor {
+	min-height: 200px;
+	width: 360px;
+	margin: 20px auto;
+}
+
+@media (min-width: 500px) {
+	.container-editor {
+		width: 460px;
+		ul,
+		ol {
+			margin-left: 25px;
+		}
+	}
+}
+
+@media (min-width: 680px) {
+	.container-editor {
+		width: 100%;
+	}
+}
