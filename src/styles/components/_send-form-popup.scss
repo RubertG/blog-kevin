@@ -1,0 +1,48 @@
+.send-form {
+	position: fixed;
+	top: 20px;
+	right: 50%;
+	background-color: $secondary;
+	width: 120px;
+	height: 50px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: translateX(50%) translateY(-20px);
+	opacity: 0;
+	z-index: 1000000;
+	transition: all 0.3s;
+
+	.send-form__loader {
+		width: 28px;
+		height: 28px;
+		border: 3px solid #fff;
+		border-bottom-color: $primary;
+		border-radius: 50%;
+		display: inline-block;
+		box-sizing: border-box;
+		animation: rotation 1s linear infinite;
+	}
+
+	p {
+		font-size: 1.2rem;
+		color: $text-white;
+		opacity: 0;
+		animation: entry 0.2s both;
+	}
+}
+
+.send-form.active {
+	transform: translateX(50%) translateY(0px);
+	opacity: 1;
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

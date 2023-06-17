@@ -4,7 +4,7 @@ import '@ckeditor/ckeditor5-build-classic/build/translations/es';
 import { storage } from '@/firebase/config';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 
-export default function Editor({ projectData, idProject, setProjectState }) {
+export default function Editor({ projectData, idProject, setProjectState, setError }) {
 
    const handleImageUpload = async (file) => {
       const storageRef = ref(storage, `services-projects/${idProject}/${file.name}`);
@@ -21,7 +21,8 @@ export default function Editor({ projectData, idProject, setProjectState }) {
 
    const handleChange = (event, editor) => {
       const data = editor.getData();
-      // setProjectState({ ...projectData, content: data })
+      setError("")
+      setProjectState({ ...projectData, content: data })
    };
 
    return (

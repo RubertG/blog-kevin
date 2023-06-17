@@ -139,6 +139,12 @@ body::-webkit-scrollbar-thumb {
 		font-size: 3.1rem;
 		text-align: left;
 	}
+
+	.container-colum-admin {
+		.title {
+			text-align: center;
+		}
+	}
 }
 
 @media (min-width: 1200px) {
