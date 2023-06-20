@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 
 export function useLogin() {
-   const [user, setUser] = useState()
+   const [user, setUser] = useState({ email: "", password: "" })
    const [loading, setLoading] = useState(false)
    const [errorEmail, setErrorEmail] = useState("")
    const [errorPassword, setErrorPassword] = useState("")
