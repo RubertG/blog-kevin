@@ -82,7 +82,7 @@ export function useForm({ project, idProject, isAddSubmit }) {
       setLoading(false)
    }
 
-   const handleSubmit = async () => {
+   const handleSubmit = async (e) => {
       e.preventDefault()
       if (verifyErrors(e)) {
          setPopupVisible(true)
