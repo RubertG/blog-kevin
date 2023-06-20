@@ -14,7 +14,7 @@ function Header() {
          <div className="container-text">
             <h2 className="title">¡Hola! ¿Cómo estás?</h2>
             <h2 className="title">Soy <span className="title-primary">Kevin Gonzalez.</span></h2>
-            <p>Ingeniero electromecánico especializado en seguridad y salud en el trabajo. Mas descripción sobre sus características y habilidades.</p>
+            <p>Ingeniero electromecánico especialista en gerencia de riesgos, seguridad y salud en el trabajo.</p>
             <div className="container-buttons">
                <Button href="#contacto">
                   Contáctame
