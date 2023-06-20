@@ -82,9 +82,9 @@ export function useForm({ project, idProject, isAddSubmit }) {
       setLoading(false)
    }
 
-   const handleSubmit = async (e) => {
+   const handleSubmit = async () => {
       e.preventDefault()
-      if (verifyErrors()) {
+      if (verifyErrors(e)) {
          setPopupVisible(true)
          setLoading(true)
          if (isAddSubmit) return addDoc()
