@@ -33,10 +33,12 @@
 
 	.project-card__body {
 		padding: 0 10px;
+		width: 100%;
 		margin-bottom: 25px;
 
 		.body__title {
 			text-align: center;
+			width: 100%;
 
 			h3 {
 				font-size: 1.45rem;
@@ -48,6 +50,7 @@
 		.body__text {
 			text-align: justify;
 			color: $text-white;
+			width: 100%;
 
 			p {
 				margin: 15px 0;
@@ -97,17 +100,19 @@
 		}
 
 		.project-card__body {
-			padding: 10px 0;
+			padding: 15px 0;
+			width: 100%;
 			margin-right: 20px;
 			margin-bottom: 0;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			flex-direction: column;
+			overflow-y: auto;
 
 			.body__title {
-				width: 100%;
 				text-align: start;
+				line-height: 30px;
 
 				h3 {
 					font-size: 1.55rem;

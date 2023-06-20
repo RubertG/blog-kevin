@@ -9,7 +9,7 @@ function SendFormPopup({ children, isLoading }) {
       if (isLoading) return setActive(true)
       setTimeout(() => {
          setActive(false)
-      }, 3000)
+      }, 1800)
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [isLoading])
 

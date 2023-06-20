@@ -1,20 +1,24 @@
 .container-editor {
 	width: 360px;
 	margin: 20px auto;
+	ul,
+	ol {
+		margin-left: 25px;
+	}
 }
 
 @media (min-width: 500px) {
 	.container-editor {
 		width: 460px;
-		ul,
-		ol {
-			margin-left: 25px;
-		}
 	}
 }
 
 @media (min-width: 680px) {
 	.container-editor {
 		width: 100%;
+		ul,
+		ol {
+			margin-left: 30px;
+		}
 	}
 }

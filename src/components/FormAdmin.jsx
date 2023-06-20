@@ -1,72 +1,35 @@
 "use client"
-import { uploadImage } from '@/firebase/uploadImage';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { useRef, useState } from 'react';
 import SendFormPopup from './SendFormPopup';
+import { v4 } from "uuid"
+import { useForm } from '@/hooks/useForm';
+import { useState } from 'react';
 
 const DynamicEditor = dynamic(() => import("@/components/Editor"), {
    ssr: false,
 });
 
-function FormAdmin({ project, idProject }) {
+function FormAdmin({
+   project = { name: "", desc: "", content: "" },
+   idProject,
+   isAddSubmit = false }) {
 
-   const inputRef = useRef(null);
-   const [projectState, setProjectState] = useState(project)
-   const [errorTitle, setErrorTitle] = useState("")
-   const [errorDesc, setErrorDesc] = useState("")
-   const [errorContent, setErrorContent] = useState("")
-   const [popupVisible, setPopupVisible] = useState(false)
-   const [loading, setLoading] = useState(false)
-
-   const handleImageUpload = (event) => {
-      const file = event.target.files[0];
-      if (file) {
-         onImageUpload(file);
-      }
-   };
-
-   const handleClick = () => {
-      inputRef.current.click();
-   };
-
-   const onImageUpload = async (file) => {
-      if (!file) return
-      try {
-         const url = await uploadImage(idProject, file)
-         setProjectState({ ...projectState, img: url })
-      } catch (error) {
-         alert(error)
-      }
-   }
-
-   const handleChange = ({ target }) => {
-      if (target.name === "name") setErrorTitle("")
-      if (target.name === "desc") setErrorDesc("")
-      setProjectState({ ...projectState, [target.name]: target.value })
-   }
-
-   const verifyErrors = () => {
-      if (projectState.name.length === 0) setErrorTitle("Campo vacío.")
-      if (projectState.desc.length === 0) setErrorDesc("Campo vacío.")
-      if (projectState.content.length === 0) setErrorContent("Campo vacío.")
-      return errorTitle === "" && errorDesc === "" && errorContent === ""
-   }
-
-   const handleSubmit = (e) => {
-      e.preventDefault()
-      if (verifyErrors()) {
-         setPopupVisible(true)
-         setTimeout(() => setPopupVisible(false), 3200)
-         console.log(projectState);
-      }
-   }
+   const [id, setId] = useState(idProject ? idProject : v4().slice(16))
+   console.log(id);
+   const {
+      errorContent, errorDesc, errorImg,
+      errorTitle, loading, popupVisible,
+      projectState, inputRef, setProjectState,
+      handleChange, handleClick, handleImageUpload,
+      handleSubmit, setErrorContent } = useForm({ project, idProject: id, isAddSubmit })
 
    return (
       <>
-         {popupVisible &&
+         {
+            popupVisible &&
             <SendFormPopup isLoading={loading}>
-               Enviado
+               Guardado con éxito
             </SendFormPopup>
          }
          <form className="form-edit" onSubmit={e => handleSubmit(e)}>
@@ -77,7 +40,7 @@ function FormAdmin({ project, idProject }) {
                   name='name'
                   id="title"
                   onChange={e => handleChange(e)}
-                  defaultValue={project.name} />
+                  defaultValue={project.name || ""} />
             </label>
             <p className='form-error'>{errorTitle}</p>
             <label htmlFor="desc" className="form-edit__label">
@@ -86,16 +49,20 @@ function FormAdmin({ project, idProject }) {
                   id="desc"
                   name='desc'
                   onChange={e => handleChange(e)}
-                  defaultValue={project.desc} />
+                  defaultValue={project.desc || ""} />
             </label>
             <p className='form-error'>{errorDesc}</p>
             <div className="container-input-file">
                <h3 className='label__title'>Imagen principal</h3>
-               <Image
-                  src={projectState.img}
-                  width={800}
-                  height={700}
-                  alt={project.name} />
+               {
+                  projectState.img && (
+                     <Image
+                        src={projectState.img}
+                        width={800}
+                        height={700}
+                        alt={project.name} />
+                  )
+               }
                <input
                   type="file"
                   accept="image/*"
@@ -110,17 +77,18 @@ function FormAdmin({ project, idProject }) {
                >
                   Subir Imagen
                </button>
+               <p className='form-error'>{errorImg}</p>
             </div>
             <div className="container-editor">
                <DynamicEditor
                   projectData={projectState}
-                  idProject={idProject}
+                  idProject={id}
                   setProjectState={setProjectState}
                   setError={setErrorContent}
                />
             </div>
             <p className='form-error'>{errorContent}</p>
-            <button type='submit' className='btn btn-primary'>Actualizar</button>
+            <button type='submit' className='btn btn-primary'>Guardar</button>
          </form>
 
       </>
