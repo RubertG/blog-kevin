@@ -14,9 +14,8 @@ function FormAdmin({
    project = { name: "", desc: "", content: "" },
    idProject,
    isAddSubmit = false }) {
-
    const [id, setId] = useState(idProject ? idProject : v4().slice(16))
-   console.log(id);
+
    const {
       errorContent, errorDesc, errorImg,
       errorTitle, loading, popupVisible,

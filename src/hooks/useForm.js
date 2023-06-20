@@ -67,7 +67,6 @@ export function useForm({ project, idProject, isAddSubmit }) {
          alert("Error al subir el archivo.")
       }
       setLoading(false)
-      console.log(idProject, projectState);
    }
 
    const editDoc = async () => {

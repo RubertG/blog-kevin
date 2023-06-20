@@ -131,6 +131,12 @@ body::-webkit-scrollbar-thumb {
 		top: 40px;
 		right: 30px;
 	}
+
+	.button-left {
+		position: absolute;
+		top: 40px;
+		left: 30px;
+	}
 }
 
 @media (min-width: 1024px) {
