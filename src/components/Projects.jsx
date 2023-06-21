@@ -12,12 +12,11 @@ function Projects({ limit = null, isCardSecondary = false, isAdmin = false }) {
    let rightCard = true
 
    useEffect(() => {
-      if (projects) return
       getProjects((querySnapshot) => {
          const auxProjects = [];
          let i = 0;
          querySnapshot.forEach((doc) => {
-            if (limit && limit <= i + 1) return;
+            if (limit && limit <= i) return;
             const id = doc.id;
             auxProjects.push({ ...doc.data(), id });
             i++
